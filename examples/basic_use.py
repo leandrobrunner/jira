@@ -20,8 +20,8 @@ assert issue.fields  # for mypy benefit
 # Find all comments made by Atlassians on this issue.
 atl_comments = [
     comment
-    for comment in issue.fields.comment.comments  # type: ignore # FIXME: .comments?
-    if re.search(r"@atlassian.com$", comment.author.emailAddress)
+    for comment in issue.fields.comment.comments
+    if re.search(r"@atlassian.com$", comment.author.key)
 ]
 
 # Add a comment to the issue.
